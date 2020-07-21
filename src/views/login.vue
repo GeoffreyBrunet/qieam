@@ -27,7 +27,7 @@
                 if(this.input.username != "" && this.input.password != "") {
                     if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
                         this.$emit("authenticated", true);
-                        this.$router.replace({ name: "secure" });
+                        this.$router.replace({ name: "profile" });
                     } else {
                         console.log("The username and / or password is incorrect");
                     }
@@ -51,22 +51,22 @@
         padding: 20px;
         font-family: Arial, sans-serif;
     }
-    h3{
-        text-align: left;
-        padding-left: 42.5%;
-    }
-    input{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
     button{
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
+    h3{
+        text-align: left;
+        padding-left: 42.5%;
+    }
     img{
         max-width: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    input{
         display: block;
         margin-left: auto;
         margin-right: auto;
