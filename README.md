@@ -15,10 +15,7 @@ npm run serve
 npm run build
 ```
 
-### Lints and fixes files
+### No CORS error on Google Chrome
 ```
-npm run lint
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --user-data-dir="/tmp/chrome_dev_session" --disable-web-security
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
