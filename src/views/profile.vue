@@ -2,9 +2,21 @@
   <div id="profile" class="profile">
     <img src="../assets/logo-qieam.png" alt=""><br>
     <h3>Mes jeux</h3>
-    <p>{{ games }}</p>
+
+    <ul>
+      <li v-for="name of games" :key="name.id">
+        {{ name.name }}
+      </li>
+    </ul>
+
     <h3>Les prochaines sorties</h3>
-    <p>{{ store }}</p>
+    
+    <ul>
+      <li v-for="name of store" :key="name.id">
+        {{ name.name }}
+      </li>
+    </ul>
+
     <button type="button" v-on:click="friendsButton()"><i class="lni lni-arrow-right"></i></button><br>
   </div>
 </template>
@@ -17,8 +29,8 @@
 
          data () {
             return {
-              games: null,
-              store: null
+              games: [],
+              store: []
             }
         },
 
@@ -97,5 +109,8 @@
         display: left;
         margin-left: auto;
         margin-right: auto;
+    }
+    li{
+      display: inline;
     }
 </style>

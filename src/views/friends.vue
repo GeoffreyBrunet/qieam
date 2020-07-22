@@ -1,7 +1,12 @@
 <template>
   <div id="friends" class="friends">
-    <img src="../assets/logo-qieam.png" alt=""><br>
-    <p>{{ friends }}</p>
+
+    <ul>
+      <li v-for="name of friends" :key="name.id">
+        {{ name.name }}
+      </li>
+    </ul>
+
     <button type="button" v-on:click="leftButton() "><i class="lni lni-arrow-left"></i></button><br>
   </div>
 </template>
@@ -14,7 +19,7 @@
         
         data () {
           return {
-            friends: null
+            friends: []
           }
         },
 
@@ -74,5 +79,8 @@
         display: left;
         margin-left: auto;
         margin-right: auto;
+    }
+    li{
+      display: inline;
     }
 </style>
