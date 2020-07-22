@@ -2,18 +2,19 @@
   <div id="profile" class="profile">
     <img src="../assets/logo-qieam.png" alt=""><br>
     <h3>Mes jeux</h3>
-
     <ul>
       <li v-for="name of games" :key="name.id">
         {{ name.name }}
+        <button type="button"><i class="lni lni-download"></i></button>
+        <button type="button"><i class="lni lni-target"></i></button>
       </li>
     </ul>
 
     <h3>Les prochaines sorties</h3>
-    
     <ul>
       <li v-for="name of store" :key="name.id">
         {{ name.name }}
+        <button type="button"><i class="lni lni-shopping-basket"></i></button>
       </li>
     </ul>
 
@@ -89,6 +90,7 @@
 
 <style scoped>
     body {
+        -webkit-font-smoothing: antialiased;
         width: 100%;
         display: block;
         background-color: #ffffff;
@@ -97,12 +99,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 20px;
-        font-family: Arial, sans-serif;
-    }
-    button{
-        display: right;
-        margin-left: auto;
-        margin-right: auto;
+        font-family: "Avenir", Helvetica, Arial, sans-serif;
     }
     img{
         max-width: 15%;
@@ -111,6 +108,11 @@
         margin-right: auto;
     }
     li{
-      display: inline;
+      display: inline-grid;
+      align-items: start;
+      grid-template-rows: repeat(3, 20px);
+      grid-gap: 10px;
+      grid-auto-flow: column;
+      grid-auto-columns: 200px 10px;
     }
 </style>

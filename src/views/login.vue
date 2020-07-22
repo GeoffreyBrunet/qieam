@@ -41,6 +41,7 @@
 
 <style scoped>
     body {
+        -webkit-font-smoothing: antialiased;
         width: 100%;
         display: block;
         background-color: #ffffff;
@@ -49,7 +50,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 20px;
-        font-family: Arial, sans-serif;
+        font-family: "Avenir", Helvetica, Arial, sans-serif;
     }
     button{
         display: block;

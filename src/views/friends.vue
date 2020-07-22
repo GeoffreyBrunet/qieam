@@ -1,13 +1,16 @@
 <template>
   <div id="friends" class="friends">
+    <img src="../assets/logo-qieam.png" alt=""><br>
 
     <ul>
       <li v-for="name of friends" :key="name.id">
+        <button type="button"><i class="lni lni-user"></i></button>
         {{ name.name }}
+        <button type="button"><i class="lni lni-chevron-down-circle"></i></button>
       </li>
     </ul>
 
-    <button type="button" v-on:click="leftButton() "><i class="lni lni-arrow-left"></i></button><br>
+    <button type="button" v-on:click="leftButton()"><i class="lni lni-arrow-left"></i></button><br>
   </div>
 </template>
 
@@ -59,6 +62,7 @@
 
 <style scoped>
     body {
+        -webkit-font-smoothing: antialiased;
         width: 100%;
         display: block;
         background-color: #ffffff;
@@ -67,12 +71,7 @@
         margin-left: auto;
         margin-right: auto;
         padding: 20px;
-        font-family: Arial, sans-serif;
-    }
-    button{
-        display: left;
-        margin-left: auto;
-        margin-right: auto;
+        font-family: "Avenir", Helvetica, Arial, sans-serif;
     }
     img{
         max-width: 15%;
@@ -81,6 +80,11 @@
         margin-right: auto;
     }
     li{
-      display: inline;
+      display: inline-grid;
+      align-items: start;
+      grid-template-rows: repeat(3, 20px);
+      grid-gap: 20px;
+      grid-auto-flow: column;
+      grid-auto-columns: 200px 20px;
     }
 </style>
