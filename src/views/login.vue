@@ -27,7 +27,7 @@
                 if(this.input.username != "" && this.input.password != "") {
                     if(this.input.username == this.$parent.mockAccount.username && this.input.password == this.$parent.mockAccount.password) {
                         this.$emit("authenticated", true);
-                        this.$router.replace({ name: "profile" });
+                        this.$router.replace({ name: "profile" }).catch(()=>{});
                     } else {
                         console.log("The username and / or password is incorrect");
                     }
