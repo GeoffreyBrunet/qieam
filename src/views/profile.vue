@@ -2,7 +2,9 @@
   <div id="profile" class="profile">
     <img src="../assets/logo-qieam.png" alt=""><br>
     <h3>Mes jeux</h3>
+    <p>{{ games }}</p>
     <h3>Les prochaines sorties</h3>
+    <p>{{ store }}</p>
     <button type="button" v-on:click="friendsButton()"><i class="lni lni-arrow-right"></i></button><br>
   </div>
 </template>
@@ -12,6 +14,13 @@
 
     export default {
         name: 'profile',
+
+         data () {
+            return {
+              games: null,
+              store: null
+            }
+        },
 
         methods: {
 
@@ -28,21 +37,11 @@
             };
 
             axios(config)
-            .then(function (response){
-              const games = response.data;
-              console.log(JSON.stringify(response.data));
-              //const games = response.data
-              //return games
-            })
-
+            .then(response => (this.games = response.data.games))
             .catch(function (error) {
               console.log(error);
             });
           },
-
-          friendsButton() {
-              this.$router.replace({ name: "friends" }).catch(()=>{});
-            },
 
           getRequestStore() {
 
@@ -57,17 +56,16 @@
             };
 
             axios(config)
-            .then(function (response){
-              const games = response.data;
-              console.log(JSON.stringify(response.data));
-              //const games = response.data
-              //return games
-            })
-
+            .then(response => (this.store = response.data.games))
             .catch(function (error) {
               console.log(error);
             });
           },
+
+          friendsButton() {
+              this.$router.replace({ name: "friends" }).catch(()=>{});
+          },
+
         },
 
         mounted(){

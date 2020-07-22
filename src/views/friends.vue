@@ -1,16 +1,24 @@
 <template>
   <div id="friends" class="friends">
     <img src="../assets/logo-qieam.png" alt=""><br>
+    <p>{{ friends }}</p>
     <button type="button" v-on:click="leftButton() "><i class="lni lni-arrow-left"></i></button><br>
   </div>
 </template>
 
 <script>
-    import axios from 'axios';
+  import axios from 'axios';
 
-    export default {
+  export default {
         name: 'profile',
         
+        data () {
+          return {
+            friends: null
+          }
+        },
+
+
         methods: {
 
           getRequestFriends() {
@@ -26,12 +34,11 @@
             };
 
             axios(config)
-            .then(function (response) {
-              console.log(JSON.stringify(response.data));
-            })
+            .then(response => (this.friends = response.data.friends))
             .catch(function (error) {
               console.log(error);
             });
+
           },
 
           leftButton() {
@@ -42,7 +49,7 @@
         beforeMount(){
               this.getRequestFriends()
         },
-    }   
+  }   
 </script>
 
 <style scoped>
