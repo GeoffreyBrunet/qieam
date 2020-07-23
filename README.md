@@ -1,5 +1,7 @@
 # qieam
 
+Web application for games built on VueJS.
+
 ## How this app have been created
 
 ### Components:
@@ -9,24 +11,24 @@
 
 
 ### Folders and files
-Folders:
+**Folders**:
 * src/ : Contain all code of this app.
 * src/views/ : Contain the 3 views of this app.
 * src/assets/ : Contain pictures and Logo.
 
-Files:
+**Files**:
 * package.json : Contain a list with packages and version of what npm need to install for run this app.
 * src/main.js : Define rules security and routing for connexion. 
 * src/router.js Contain all routing rules of this app.
 
 
 ### Credentials for connection on this app
-Username is:
+**Username** is:
 ```
 username
 ```
 
-Password is:
+**Password** is:
 ```
 password
 ```
@@ -46,12 +48,12 @@ npm run build
 ### Run app in a container with Docker
 For create Docker image on your computer, run the following command:
 ```
-docker build -t vuejs-cookbook/dockerize-vuejs-app .
+docker build -t vuejs-cookbook/qieam-vuejs-app .
 ```
 
 And for run a container with the new image created, run:
 ```
-docker run -it -p 8080:8080 --rm --name dockerize-vuejs-app-1 vuejs-cookbook/dockerize-vuejs-app
+docker run -it -p 8080:8080 --rm --name qieam-vuejs-app-1 vuejs-cookbook/qieam-vuejs-app
 ```
 
 ## No CORS error on Google Chrome
