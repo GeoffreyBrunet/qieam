@@ -81,6 +81,7 @@
     }
     li{
       display: inline-grid;
+      text-align: center;
       align-items: start;
       grid-template-rows: repeat(3, 20px);
       grid-gap: 20px;
